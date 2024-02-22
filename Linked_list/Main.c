@@ -9,7 +9,7 @@ int main()
 	int n = 0;
 
 	do{
-		printf("\nEnter your choise:\n0 -> Exit\n1 -> print list\n2 -> insert node from front\n3 -> insert node at end\n4 -> delete node from head\n5 -> delete n'th node\n6 -> reverse linked list\n");
+		printf("\nEnter your choise:\n0 -> Exit\n1 -> print list\n2 -> insert node from front\n3 -> insert node at end\n4 -> delete node from head\n5 -> delete n'th node\n6 -> reverse linked list\n7 ->reverse print\n");
 		scanf("%d",&ch);
 		if(ch == 3 || ch == 2)
 		{
@@ -19,7 +19,7 @@ int main()
 		switch(ch){
 			case 0:
 				printf("\nDoing nothing!!!");
-				return;
+				return 0;
 			case 1:
 				print_list();
 				break;
@@ -37,6 +37,9 @@ int main()
 				break;
 			case 6:
 				reverse_linked_list();
+				break;
+			case 7:
+				reverse_print(head);
 				break;
 
 		}

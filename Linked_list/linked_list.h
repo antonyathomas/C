@@ -16,4 +16,7 @@ void insert_node_tail(int);
 void print_list(void);
 void delete_from_head(void);
 void delete_nth_node(void);
+void reverse_linked_list(void);
+void reverse_print(struct Node*);
+
 #endif //LINKED_LIST_H
