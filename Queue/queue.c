@@ -39,6 +39,7 @@ void dequeue(void)
 	}
 	else
 	{
+		temp = front;
 		front = front->next;
 		printf("The Element dequeued is %d\n", temp->data);
 		free(temp);
