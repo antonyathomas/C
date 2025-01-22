@@ -1,19 +1,22 @@
-# include <stdio.h>
+#include <stdio.h>
 
-int main (void)
-{
-	int num = 0, start = 0, end = 0, range = 0;
+unsigned int setBitsInRange(unsigned int num, int start, int end) {
+    // Create a mask with bits set from start to end
+    unsigned int mask = ((1 << (end - start + 1)) - 1) << start;
 
-	printf("\nEnter the number:\n");
-	scanf("%d",&num);
-	printf("Enter the starting position:\n");
-	scanf("%d",&start);
-	printf("Enter the end position:\n");
-	scanf("%d",&end);
+    // Set the bits in the given range using bitwise OR
+    return num | mask;
+}
 
-	range = (((1<<end) - 1) ^((1<<(start-1)-1)));
+int main() {
+    unsigned int num = 0; // Binary: 00001010
+    int start = 4;
+    int end = 6;
 
-	num |= range;
+    unsigned int result = setBitsInRange(num, start, end);
 
-	printf("The result is %d\n",num);
+    printf("Original number: %u\n", num);
+    printf("Modified number: %u\n", result); // Binary: 00011110
+
+    return 0;
 }
